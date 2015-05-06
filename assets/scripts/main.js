@@ -5,34 +5,22 @@ $(document).ready(function() {
   // Access token
   L.mapbox.accessToken = 'pk.eyJ1Ijoiam1sYWJzIiwiYSI6Imlnc1pXbncifQ.1U4VwxWkGS_Y3TpZ6-sf4A';
 
+  // Define Rob Lowe Icon
+  var robLoweIcon = L.icon({
+    // Specify a class name we can refer to in CSS.
+    className: 'rob-lowe-icon',
+    // Set marker width and height
+    iconSize: [120, 181],
+    // Set icon url
+    iconUrl: 'assets/images/rob-lowe.png'
+  });
+
   /*
    * Application Functions
    */
-  var addCurrentLocationToMap = function() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var lat  = position.coords.latitude,
-            long = position.coords.longitude;
-
-        console.log('--- Your Position: ---');
-        console.log('Lat: ' + lat);
-        console.log('Long: ' + long);
-        console.log('---------------------');
-
-        // Put the marker on the map...
-        var marker = L.marker([lat, long]).addTo(map);
-
-        // Add a popup with some information...
-        marker.bindPopup('You are at:<br>' + lat + ', ' + long).openPopup();
-
-        // Pan to that marker
-        map
-          .panTo([lat, long])
-          .zoomIn(5);
-      });
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
+  var addRobLoweIconOnClick = function(e) {
+    // Add this marker to map...
+    L.marker([e.latlng.lat, e.latlng.lng], {icon: robLoweIcon}).addTo(map);
   }
 
   /*
@@ -48,8 +36,6 @@ $(document).ready(function() {
       maxZoom: 18
   }).addTo(map);
 
-  // This just adds the current location using the HTML5 API!
-  $('#get-location').click(function(event) {
-    addCurrentLocationToMap();
-  });
+  // Add Rob Lowe Icons when Clicked!
+  map.on('click', addRobLoweIconOnClick);
 });

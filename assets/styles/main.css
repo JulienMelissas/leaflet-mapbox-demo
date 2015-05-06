@@ -11,6 +11,10 @@ body {
   padding: 0 15px;
 }
 
+.hide {
+  display: none;
+}
+
 /*
  * Map Styles
  */
