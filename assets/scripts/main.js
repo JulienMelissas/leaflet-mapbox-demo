@@ -18,6 +18,11 @@ $(document).ready(function() {
 
         // Add a popup with some information...
         marker.bindPopup('You are at:<br>' + lat + ', ' + long).openPopup();
+
+        // Pan to that marker
+        map
+          .panTo([lat, long])
+          .zoomIn(5);
       });
     } else {
       console.log("Geolocation is not supported by this browser.");
