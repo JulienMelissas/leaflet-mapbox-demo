@@ -1,3 +1,7 @@
+/*
+ * Global Styles
+ */
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -5,4 +9,12 @@ body {
 .container {
   max-width: 900px;
   padding: 0 15px;
+}
+
+/*
+ * Map Styles
+ */
+
+#map {
+  height: 500px;
 }
