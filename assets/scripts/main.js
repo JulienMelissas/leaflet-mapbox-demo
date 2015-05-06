@@ -8,7 +8,7 @@ $(document).ready(function() {
   /*
    * Application Functions
    */
-  addCurrentLocationToMap = function() {
+  var addCurrentLocationToMap = function() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var lat  = position.coords.latitude,
