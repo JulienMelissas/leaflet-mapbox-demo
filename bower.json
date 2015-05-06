@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-talk-demo",
+  "version": "1.0.0",
+  "authors": [
+    "Julien Melissas <julien.melissas@gmail.com>"
+  ],
+  "description": "an example of a simple leaflet/mapbox project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
