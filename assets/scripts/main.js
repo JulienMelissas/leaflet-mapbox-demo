@@ -5,12 +5,19 @@ $(document).ready(function() {
   addCurrentLocationToMap = function() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
+        var lat  = position.coords.latitude,
+            long = position.coords.longitude;
+
         console.log('--- Your Position: ---');
-        console.log('Lat: ' + position.coords.latitude);
-        console.log('Long: ' + position.coords.longitude);
+        console.log('Lat: ' + lat);
+        console.log('Long: ' + long);
         console.log('---------------------');
 
-        var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+        // Put the marker on the map...
+        var marker = L.marker([lat, long]).addTo(map);
+
+        // Add a popup with some information...
+        marker.bindPopup('You are at:<br>' + lat + ', ' + long).openPopup();
       });
     } else {
       console.log("Geolocation is not supported by this browser.");
