@@ -1,4 +1,4 @@
-#Leaflet Maps Demo
+#Leaflet/Mapbox Demo
 History and steps for tutorial are in seperate git commits.
 
 ##Setup for the Project:
