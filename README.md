@@ -1,5 +1,6 @@
 #Leaflet/Mapbox Demo
 History and steps for tutorial are in seperate git commits.
+Here's the link to ScreenFlow/Audio Recording of the talk I did on YouTube: <https://www.youtube.com/watch?v=jRXaQC0jKcg/>
 
 ##Setup for the Project:
  - You need to have node.js and npm (node package manager) installed.
